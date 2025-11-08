@@ -15,10 +15,10 @@ window.onclick = function(event) {
   }
 }
 
-modal.addEventListener("touchstart", (event) => {
-  if (event.target == fogotPassModal) {
+document.addEventListener("touchstart", (event) => {
+  if (event.target === fogotPassModal) {
     fogotPassModal.style.display = "none";
-  } else if (event.target == loginSucessModal) {
+  } else if (event.target === loginSucessModal) {
     loginSucessModal.style.display = "none";
   }
 });
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".login-form");
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
     const formMessages = document.querySelectorAll(".form-message");
 
     form.addEventListener("submit", function (e) {
@@ -64,16 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
         messageEl.textContent = message;
         messageEl.style.color = "red";
     }
-});
 
-const togglePassword = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("password");
+    togglePassword.addEventListener("click", () => {
+    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+    passwordInput.setAttribute("type", type);
 
-togglePassword.addEventListener("click", () => {
-  const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-  passwordInput.setAttribute("type", type);
-
-  togglePassword.innerHTML = type === "password"
-    ? '<i class="fa-regular fa-eye"></i>'
-    : '<i class="fa-regular fa-eye-slash"></i>';
+    togglePassword.innerHTML = type === "password"
+      ? '<i class="fa-regular fa-eye"></i>'
+      : '<i class="fa-regular fa-eye-slash"></i>';
+    });
 });
