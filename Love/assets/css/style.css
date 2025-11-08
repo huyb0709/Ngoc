@@ -5,7 +5,7 @@
 }
 
 body {
-    background: url(/Love/assets/img/background_1.jpg);
+    background: url(/Ngoc/Love/assets/img/background_1.jpg);
 }
 
 .login-form {
@@ -62,7 +62,7 @@ body {
   width: 770px;
   height: 750px;
   position: absolute;
-  background: url(/Love/assets/img/background_2.jpg);
+  background: url(/Ngoc/Love/assets/img/background_2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
