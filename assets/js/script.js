@@ -10,16 +10,12 @@ forgotBtn.onclick = function() {
 window.onclick = function(event) {
   if (event.target == fogotPassModal) {
     fogotPassModal.style.display = "none";
-  } else if (event.target == loginSucessModal) {
-    loginSucessModal.style.display = "none";
   }
 }
 
 document.addEventListener("touchstart", (event) => {
   if (event.target === fogotPassModal) {
     fogotPassModal.style.display = "none";
-  } else if (event.target === loginSucessModal) {
-    loginSucessModal.style.display = "none";
   }
 });
 
@@ -51,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isValid) {
             if (username === "huybva" && password === "lovengoc") {
-                loginSucessModal.style.display = "block";
+                window.location.href="/Ngoc/pages/home.html"
                 form.reset();
             } else {
                 showError(passwordInput, "Wrong username or password.");
@@ -64,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const messageEl = parent.querySelector(".form-message");
         messageEl.textContent = message;
         messageEl.style.color = "red";
+        togglePassword.style.top = "35%"
     }
 
     togglePassword.addEventListener("click", () => {
